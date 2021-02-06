@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stocks Tracker</string>
+    <string name="first">First.</string>
+    <string name="second">Second.</string>
+    <string name="third">Third.</string>
+    <string name="fourth">Fourth.</string>
+    <string name="fifth">Fifth.</string>
+    <string name="sixth">Sixth.</string>
+    <string name="seventh">Seventh.</string>
+    <string name="eigth">Eight.</string>
+    <string name="ninth">Ninth.</string>
+    <string name="tenth">Tenth.</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_first">First List</string>
+    <string name="title_second">Second List</string>
+</resources>
