@@ -24,14 +24,11 @@ class FirstListFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_second, container, false)
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.adapter = MoverAdapter(this, firstListViewModel.getData())
 
-        // Use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = MoverAdapter(this, firstListViewModel.myDataset)
+
 
         return root
     }
-
 
 }

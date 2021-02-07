@@ -18,10 +18,6 @@ class MoverAdapter(
 
 ): RecyclerView.Adapter<MoverAdapter.MoverViewHolder>() {
 
-
-
-    private val list = moverList?.execute()?.body()
-
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder.
@@ -47,15 +43,16 @@ class MoverAdapter(
      * Replace the contents of a view (invoked by the layout manager)
      */
     override fun onBindViewHolder(holder: MoverViewHolder, position: Int) {
-        val item = list!![position]
+        val item = moverList?.execute()?.body()!![position]
         val name = item?.getStandardName()
         holder.textView.text = name
         //holder.imageView.setImageResource(item.imageResourceId)
 
     }
 
-
-    override fun getItemCount() = list!!.size
+    override fun getItemCount(): Int {
+        return moverList!!.execute().body()!!.size
+    }
 
     //Set what happens when you click on individual item
     //AdapterPosition is the position of the item clicked
