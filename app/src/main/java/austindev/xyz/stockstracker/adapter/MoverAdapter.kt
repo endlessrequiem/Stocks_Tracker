@@ -9,18 +9,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
 import austindev.xyz.stockstracker.data.Gainer
-import retrofit2.Call
+import austindev.xyz.stockstracker.ui.SecondList.SecondListFragment
 
 class MoverAdapter(
-        private var context: List<Gainer?>,
-        private var moverList: Call<List<Gainer?>?>?
+        private var moverList: List<Gainer?>?
 
 ): RecyclerView.Adapter<MoverAdapter.MoverViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder.
-    // Each data item is just an Affirmation object.
     class MoverViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
         val imageView: ImageView = view.findViewById(R.id.item_image)
@@ -42,7 +40,8 @@ class MoverAdapter(
      * Replace the contents of a view (invoked by the layout manager)
      */
     override fun onBindViewHolder(holder: MoverViewHolder, position: Int) {
-        val item = moverList!!.execute().body()!![position]
+        val item = moverList?.get(position)
+
         val name = item?.getStandardName()
         holder.textView.text = name
         //holder.imageView.setImageResource(item.imageResourceId)
@@ -50,7 +49,7 @@ class MoverAdapter(
     }
 
     override fun getItemCount(): Int {
-        return moverList!!.execute().body()!!.size
+        return moverList!!.size
     }
 
     //Set what happens when you click on individual item

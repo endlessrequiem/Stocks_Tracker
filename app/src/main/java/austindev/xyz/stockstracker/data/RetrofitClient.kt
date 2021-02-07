@@ -1,5 +1,6 @@
 package austindev.xyz.stockstracker.data
 
+import android.util.Log
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,6 +15,9 @@ class RetrofitClient {
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
             }
+            Log.d("Client", "CLIENT LOADED")
+
             return retrofit
         }
+
 }
