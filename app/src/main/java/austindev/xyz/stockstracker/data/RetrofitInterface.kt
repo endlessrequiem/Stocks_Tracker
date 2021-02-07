@@ -6,6 +6,6 @@ import retrofit2.http.Headers
 
 interface RetrofitInterface {
 
-    @GET("")
+    @GET("https://raw.githubusercontent.com/endlessrequiem/Stocks_Tracker/master/data.json/")
     fun getGainers(): Call<List<Gainer?>?>?
 }

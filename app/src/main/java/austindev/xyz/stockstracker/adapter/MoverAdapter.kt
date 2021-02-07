@@ -9,12 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
 import austindev.xyz.stockstracker.data.Gainer
-import austindev.xyz.stockstracker.ui.FirstList.FirstListFragment
 import retrofit2.Call
 
 class MoverAdapter(
-    private var context: FirstListFragment,
-    private var moverList: Call<List<Gainer?>?>?
+        private var context: List<Gainer?>,
+        private var moverList: Call<List<Gainer?>?>?
 
 ): RecyclerView.Adapter<MoverAdapter.MoverViewHolder>() {
 
@@ -43,7 +42,7 @@ class MoverAdapter(
      * Replace the contents of a view (invoked by the layout manager)
      */
     override fun onBindViewHolder(holder: MoverViewHolder, position: Int) {
-        val item = moverList?.execute()?.body()!![position]
+        val item = moverList!!.execute().body()!![position]
         val name = item?.getStandardName()
         holder.textView.text = name
         //holder.imageView.setImageResource(item.imageResourceId)
