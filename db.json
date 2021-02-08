@@ -1,4 +1,106 @@
 {
+  "actives":[
+    {
+      "exchange":"XNYS",
+      "lastPrice":6.83,
+      "percentChange":-3.6671,
+      "performanceId":"0P00011H0G",
+      "priceChange":-0.26,
+      "standardName":"AMC Entertainment Holdings Inc Class A",
+      "ticker":"AMC",
+      "volume":1.93861226E8
+    },
+    {
+      "exchange":"XNYS",
+      "lastPrice":11.51,
+      "percentChange":1.2313,
+      "performanceId":"0P0000029A",
+      "priceChange":0.14,
+      "standardName":"Ford Motor Co Ordinary Shares",
+      "ticker":"F",
+      "volume":1.12779653E8
+    },
+    {
+      "exchange":"XNYS",
+      "lastPrice":4.22,
+      "percentChange":-3.4325,
+      "performanceId":"0P000003XI",
+      "priceChange":-0.15,
+      "standardName":"Nokia Oyj ADR",
+      "ticker":"NOK",
+      "volume":1.0681281E8
+    },
+    {
+      "exchange":"XASE",
+      "lastPrice":3.03,
+      "percentChange":13.4831,
+      "performanceId":"0P00015GYV",
+      "priceChange":0.36,
+      "standardName":"Senseonics Holdings Inc",
+      "ticker":"SENS",
+      "volume":9.3712479E7
+    },
+    {
+      "exchange":"XNYS",
+      "lastPrice":63.64,
+      "percentChange":9.1408,
+      "performanceId":"0P00019RU1",
+      "priceChange":5.33,
+      "standardName":"Snap Inc Class A",
+      "ticker":"SNAP",
+      "volume":8.5229617E7
+    },
+    {
+      "exchange":"XNYS",
+      "lastPrice":63.77,
+      "percentChange":19.1963,
+      "performanceId":"0P000002CH",
+      "priceChange":10.27,
+      "standardName":"GameStop Corp Class A",
+      "ticker":"GME",
+      "volume":8.0355376E7
+    },
+    {
+      "exchange":"XNAS",
+      "lastPrice":136.76,
+      "percentChange":-0.4585,
+      "performanceId":"0P000000GY",
+      "priceChange":-0.63,
+      "standardName":"Apple Inc Ordinary Shares",
+      "ticker":"AAPL",
+      "volume":7.5410725E7
+    },
+    {
+      "exchange":"XNYS",
+      "lastPrice":34.65,
+      "percentChange":14.6592,
+      "performanceId":"0P0001KRDL",
+      "priceChange":4.43,
+      "standardName":"Churchill Capital Corp IV Ordinary Shares - Class A",
+      "ticker":"CCIV",
+      "volume":6.5921189E7
+    },
+    {
+      "exchange":"XNAS",
+      "lastPrice":12.93,
+      "percentChange":5.7236,
+      "performanceId":"0P0001LH7T",
+      "priceChange":0.7,
+      "standardName":"Clover Health Investments Corp Ordinary Shares - Class A",
+      "ticker":"CLOV",
+      "volume":6.5428395E7
+    },
+    {
+      "exchange":"XNAS",
+      "lastPrice":4.945,
+      "percentChange":-6.5217,
+      "performanceId":"0P000007QQ",
+      "priceChange":-0.345,
+      "standardName":"Ideanomics Inc",
+      "ticker":"IDEX",
+      "volume":6.5423601E7
+    }
+  ],
   "gainers":[
     {
       "exchange":"XNYS",
@@ -99,6 +201,18 @@
       "standardName":"Yalla Group Ltd ADR",
       "ticker":"YALA",
       "volume":2679935.0
+    }
+  ],
+  "losers":[
+    {
+      "exchange":"XNAS",
+      "lastPrice":44.8,
+      "percentChange":-29.371,
+      "performanceId":"0P0000047E",
+      "priceChange":-18.63,
+      "standardName":"Cassava Sciences Inc",
+      "ticker":"SAVA",
+      "volume":2.1436898E7
     }
   ]
 }
