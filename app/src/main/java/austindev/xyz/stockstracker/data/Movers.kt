@@ -1,5 +1,6 @@
 package austindev.xyz.stockstracker.data
 
+import com.google.gson.annotations.SerializedName
 import java.util.*
 
 class Movers {

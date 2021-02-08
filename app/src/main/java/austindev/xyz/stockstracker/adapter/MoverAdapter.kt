@@ -9,10 +9,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
 import austindev.xyz.stockstracker.data.Gainer
-import austindev.xyz.stockstracker.ui.SecondList.SecondListFragment
 
 class MoverAdapter(
-        private var moverList: List<Gainer?>?
+        private var gainsList: List<Gainer?>?
 
 ): RecyclerView.Adapter<MoverAdapter.MoverViewHolder>() {
 
@@ -40,16 +39,16 @@ class MoverAdapter(
      * Replace the contents of a view (invoked by the layout manager)
      */
     override fun onBindViewHolder(holder: MoverViewHolder, position: Int) {
-        val item = moverList?.get(position)
+        val item = gainsList?.get(position)
 
-        val name = item?.getStandardName()
-        holder.textView.text = name
+       // val name = item.getGainers()
+        holder.textView.text = item.toString()
         //holder.imageView.setImageResource(item.imageResourceId)
 
     }
 
     override fun getItemCount(): Int {
-        return moverList!!.size
+        return gainsList!!.size
     }
 
     //Set what happens when you click on individual item

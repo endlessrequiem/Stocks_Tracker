@@ -1,41 +1,41 @@
 package austindev.xyz.stockstracker.ui.FirstList
 
-import android.os.Build
 import android.util.Log
-import android.view.View
-import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.LinearLayoutManager
-import austindev.xyz.stockstracker.adapter.MoverAdapter
-import austindev.xyz.stockstracker.data.Gainer
 import austindev.xyz.stockstracker.data.RetrofitClient
 import austindev.xyz.stockstracker.data.RetrofitInterface
-import com.google.android.material.tabs.TabLayout
 import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
+import kotlin.collections.ArrayList
+import austindev.xyz.stockstracker.data.Gainer as Gainer
 
 class FirstListViewModel : ViewModel() {
+
     val myAPIService: RetrofitInterface =
             RetrofitClient().getClient()!!.create(RetrofitInterface::class.java)
-    lateinit var myDataset: List<Gainer>
+
+    var myDataset: List<Gainer?> = ArrayList()
+    private val apiInterface: RetrofitInterface = myAPIService
 
 
-    var apiInterface: RetrofitInterface = RetrofitClient().getClient()!!.create(RetrofitInterface::class.java)
 
     fun run() {
-        var tryResp = apiInterface.getGainers()?.enqueue(object : Callback<List<Gainer?>?> {
+        Log.d("HEY", "Giving it a try")
+
+        apiInterface.getGainers()?.enqueue(object : Callback<List<Gainer?>?> {
 
             override fun onResponse(call: Call<List<Gainer?>?>, response: Response<List<Gainer?>?>) {
-                myDataset = (response.body() as List<Gainer>?)!!
+                myDataset = response.body()!!.toList()
+                Log.d("HEY", "IT WORKED")
+
+
             }
 
             override fun onFailure(call: Call<List<Gainer?>?>, t: Throwable) {
                 Log.d("HEY", "IT FAILED")
-
+                t.printStackTrace()
             }
 
 
@@ -68,7 +68,7 @@ class FirstListViewModel : ViewModel() {
             }
 
 
-        })
+        }) as Nothing?
     }
 
 
