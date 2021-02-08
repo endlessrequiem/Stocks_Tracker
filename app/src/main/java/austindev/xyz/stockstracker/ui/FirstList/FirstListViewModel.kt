@@ -68,7 +68,7 @@ class FirstListViewModel : ViewModel() {
             }
 
 
-        }) as Nothing?
+        })
     }
 
 

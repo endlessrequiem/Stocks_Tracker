@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface RetrofitInterface {
 
-    @GET("https://github.com/endlessrequiem/Stocks_Tracker/blob/[main|master]/db.json/")
+    @GET("https://my-json-server.typicode.com/endlessrequiem/Stocks_Tracker/gainers/")
     fun getGainers(): Call<List<Gainer?>?>?
 
 }

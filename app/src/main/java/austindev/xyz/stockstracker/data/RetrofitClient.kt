@@ -1,14 +1,13 @@
 package austindev.xyz.stockstracker.data
 
 import android.util.Log
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitClient {
 
     val BASE_URL =
-                "https://github.com/endlessrequiem/Stocks_Tracker/blob/[main|master]/db.json/"
+                "https://my-json-server.typicode.com/endlessrequiem/Stocks_Tracker/gainers/"
         var retrofit: Retrofit? = null
         fun getClient(): Retrofit? {
             if (retrofit == null) {

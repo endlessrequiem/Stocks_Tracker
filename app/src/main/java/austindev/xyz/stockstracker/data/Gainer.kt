@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName
 import java.util.HashMap
 
 class Gainer {
-    @SerializedName("gainers")
     private var exchange: String? = null
     private var lastPrice: Double? = null
     private var percentChange: Double? = null
