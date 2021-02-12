@@ -9,19 +9,37 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/item_image"
-            android:layout_width="match_parent"
-            android:layout_height="194dp"
-            android:importantForAccessibility="no"
-            android:scaleType="centerCrop" />
-
         <TextView
-            android:id="@+id/item_title"
+            android:id="@+id/standardName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="8dp"
+            android:text="Teradata Corp Ordinary Shares (exchange: XNYZ)"
             android:textAppearance="?attr/textAppearanceHeadline6" />
+
+        <TextView
+            android:id="@+id/lastPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Last Price: 37.08"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/priceChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Price Change: 10.04 (Percent Change: 37.1302%)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/tickerPidVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Ticker: TDC, Volume: 1.6723314E7, PerformanceID: 0P00009QEM"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     </LinearLayout>
 

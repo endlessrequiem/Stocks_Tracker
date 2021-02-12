@@ -1,7 +1,6 @@
 package austindev.xyz.stockstracker.data
 
-import com.google.gson.annotations.SerializedName
-import java.util.HashMap
+import java.util.*
 
 class Gainer {
     private var exchange: String? = null
