@@ -1,4 +1,4 @@
-package austindev.xyz.stockstracker.ui.FirstList
+package austindev.xyz.stockstracker.ui.gainerList
 
 import android.os.Bundle
 import android.util.Log
@@ -20,15 +20,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class FirstListFragment : Fragment() {
+class GainerListFragment : Fragment() {
 
-    private lateinit var firstListViewModel: FirstListViewModel
+    private lateinit var gainerListViewModel: GainerListViewModel
 
     private val myAPIService: RetrofitInterface =
             RetrofitClient().getClient()!!.create(RetrofitInterface::class.java)
 
-
-    val myDataset: List<GainerData?> = emptyList()
 
     private val apiInterface: RetrofitInterface = myAPIService
 
@@ -38,9 +36,9 @@ class FirstListFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        firstListViewModel =
-                ViewModelProvider(this).get(FirstListViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_second, container, false)
+        gainerListViewModel =
+                ViewModelProvider(this).get(GainerListViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_gainer, container, false)
         val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
 
 
@@ -48,7 +46,7 @@ class FirstListFragment : Fragment() {
 
             override fun onResponse(call: Call<List<GainerData?>?>, response: Response<List<GainerData?>?>) {
                 val myDataset = response.body()!!.toList()
-                recyclerView.adapter = GainerAdapter(myDataset)
+                recyclerView.adapter = GainerAdapter(this@GainerListFragment, myDataset)
 
                 Log.d("HEY", myDataset.toString())
             }

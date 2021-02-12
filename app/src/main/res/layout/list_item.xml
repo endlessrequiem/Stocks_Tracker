@@ -13,9 +13,18 @@
             android:id="@+id/standardName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:paddingStart="8dp"
+            android:paddingBottom="8dp"
             android:text="Teradata Corp Ordinary Shares (exchange: XNYZ)"
             android:textAppearance="?attr/textAppearanceHeadline6" />
+
+        <TextView
+            android:id="@+id/exchangeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Ticker: TDC"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <TextView
             android:id="@+id/lastPrice"
@@ -34,11 +43,28 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <TextView
-            android:id="@+id/tickerPidVolume"
+            android:id="@+id/percentChange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
-            android:text="Ticker: TDC, Volume: 1.6723314E7, PerformanceID: 0P00009QEM"
+            android:text="Percent Change: 37.1302%"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/performanceID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Ticker: TDC, PerformanceID: 0P00009QEM"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingBottom="8dp"
+            android:text="Volume: 1.6723314E7"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     </LinearLayout>

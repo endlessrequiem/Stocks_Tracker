@@ -5,19 +5,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.model.DummyData
-import austindev.xyz.stockstracker.ui.SecondList.SecondListFragment
+import austindev.xyz.stockstracker.data.DummyData
+import austindev.xyz.stockstracker.ui.loserList.LoserListFragment
 
 /**
- * Adapter for the [RecyclerView] in [SecondListFragment]. Displays [DummyData] data object.
+ * Adapter for the [RecyclerView] in [LoserListFragment]. Displays [DummyData] data object.
  */
 class ItemAdapter(
-    private val context: SecondListFragment,
-    private val dataset: List<DummyData>
+        private val context: LoserListFragment,
+        private val dataset: List<DummyData>
 ): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     // Provide a reference to the views for each data item

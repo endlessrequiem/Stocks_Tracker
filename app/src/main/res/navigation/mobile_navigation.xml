@@ -3,18 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_first">
+    app:startDestination="@id/navigation_gainer">
 
     <fragment
-        android:id="@+id/navigation_first"
-        android:name="austindev.xyz.stockstracker.ui.FirstList.FirstListFragment"
-        android:label="@string/title_first"
-        tools:layout="@layout/fragment_first" />
+        android:id="@+id/navigation_gainer"
+        android:name="austindev.xyz.stockstracker.ui.gainerList.GainerListFragment"
+        android:label="@string/title_gainer"
+        tools:layout="@layout/fragment_gainer" >
+        <action
+            android:id="@+id/action_navigation_gainer_to_navigation_actives"
+            app:destination="@id/navigation_actives" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_second"
-        android:name="austindev.xyz.stockstracker.ui.SecondList.SecondListFragment"
-        android:label="@string/title_second"
-        tools:layout="@layout/fragment_second" />
+        android:id="@+id/navigation_actives"
+        android:name="austindev.xyz.stockstracker.ui.activeList.ActiveListFragment"
+        android:label="@string/title_active">
+        <action
+            android:id="@+id/action_navigation_actives_to_navigation_losers"
+            app:destination="@id/navigation_losers" />
+        <action
+            android:id="@+id/action_navigation_actives_to_navigation_gainer"
+            app:destination="@id/navigation_gainer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_losers"
+        android:name="austindev.xyz.stockstracker.ui.loserList.LoserListFragment"
+        android:label="@string/title_loser"
+        tools:layout="@layout/fragment_losers" >
+        <action
+            android:id="@+id/action_navigation_losers_to_navigation_actives"
+            app:destination="@id/navigation_actives" />
+    </fragment>
+
 
 </navigation>

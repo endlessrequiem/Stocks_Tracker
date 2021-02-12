@@ -1,5 +1,5 @@
 
-package austindev.xyz.stockstracker.model
+package austindev.xyz.stockstracker.data
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

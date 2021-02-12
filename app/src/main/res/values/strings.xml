@@ -12,6 +12,14 @@
     <string name="ninth">Ninth.</string>
     <string name="tenth">Tenth.</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_first">First List</string>
-    <string name="title_second">Second List</string>
+    <string name="title_gainer">Gainers</string>
+    <string name="title_loser">Losers</string>
+    <string name="title_active">Actives</string>
+
+    <string name="exchangeName">Exchange: </string>
+    <string name="lastPrice">Last Price: </string>
+    <string name="priceChange">Price Change: </string>
+    <string name="percentChange">Percent Change: </string>
+    <string name="performanceID">Performance ID: </string>
+    <string name="volume">Volume: </string>
 </resources>

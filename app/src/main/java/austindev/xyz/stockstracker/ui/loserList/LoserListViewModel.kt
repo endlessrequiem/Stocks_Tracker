@@ -1,9 +1,9 @@
-package austindev.xyz.stockstracker.ui.SecondList
+package austindev.xyz.stockstracker.ui.loserList
 
 import androidx.lifecycle.ViewModel
 import austindev.xyz.stockstracker.data.SecondDataSource
 
-class SecondListViewModel : ViewModel() {
+class LoserListViewModel : ViewModel() {
 
     val myDataset = SecondDataSource().loadMoreDummyData()
 

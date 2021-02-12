@@ -1,24 +1,23 @@
 package austindev.xyz.stockstracker.adapter
 
-import austindev.xyz.stockstracker.ui.FirstList.FirstListFragment
+import austindev.xyz.stockstracker.ui.gainerList.GainerListFragment
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.model.DummyData
-import austindev.xyz.stockstracker.ui.SecondList.SecondListFragment
+import austindev.xyz.stockstracker.data.DummyData
+import austindev.xyz.stockstracker.ui.loserList.LoserListFragment
 
 /**
- * Adapter for the [RecyclerView] in [SecondListFragment]. Displays [DummyData] data object.
+ * Adapter for the [RecyclerView] in [LoserListFragment]. Displays [DummyData] data object.
  */
 class SecondAdapter(
-    private val context: FirstListFragment,
-    private val dataset: List<DummyData>
+        private val context: GainerListFragment,
+        private val dataset: List<DummyData>
 ): RecyclerView.Adapter<SecondAdapter.SecondViewHolder>() {
 
     // Provide a reference to the views for each data item

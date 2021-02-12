@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
 import austindev.xyz.stockstracker.data.GainerData
-import austindev.xyz.stockstracker.ui.FirstList.FirstListFragment
+import austindev.xyz.stockstracker.ui.gainerList.GainerListFragment
 
 class GainerAdapter(
+        private val context: GainerListFragment,
         private var gainsList: List<GainerData?>?
 
 
@@ -23,7 +24,11 @@ class GainerAdapter(
         val mStandardName: TextView = view.findViewById(R.id.standardName)
         val mLastPrice: TextView = view.findViewById(R.id.lastPrice)
         val mPriceChange: TextView = view.findViewById(R.id.priceChange)
-        val mTicker: TextView = view.findViewById(R.id.tickerPidVolume)
+        val mExchangeName: TextView = view.findViewById(R.id.exchangeName)
+        val mPerformanceID: TextView = view.findViewById(R.id.performanceID)
+        val mVolume: TextView = view.findViewById(R.id.volume)
+        val mPercentChange: TextView = view.findViewById(R.id.percentChange)
+
 
     }
 
@@ -46,16 +51,37 @@ class GainerAdapter(
         Log.d("HEY", position.toString())
 
         val stanName = item?.standardName.toString()
+        val tick = item?.ticker.toString()
+        val exchangeName = item?.exchange.toString()
         val lastPri = item?.lastPrice.toString()
-        val priChange = item?.priceChange.toString() + item?.percentChange.toString()
-        val tick = item?.ticker.toString() + item?.volume.toString() + item?.performanceId.toString()
+        val priChange = item?.priceChange.toString()
+        val perChange = item?.percentChange.toString()
+        val perID = item?.performanceId.toString()
+        val vol = item?.volume.toString()
+
+        val xcName= context.resources.getString(R.string.exchangeName)
+        val lp = context.resources.getString(R.string.lastPrice)
+        val priCh = context.resources.getString(R.string.priceChange)
+        val perCh = context.resources.getString(R.string.percentChange)
+        val performID = context.resources.getString(R.string.performanceID)
+        val volString = context.resources.getString(R.string.volume)
+
+        val nameTickFormatted = "$stanName ($tick)"
+        val excFormatted = "$xcName $exchangeName"
+        val lpFormatted = "$lp $$lastPri"
+        val priceChangeFormatted = "$priCh $$priChange"
+        val percentChangeFormatted = "$perCh $perChange%"
+        val performanceIDFormatted = "$performID $perID"
+        val volFormatted = "$volString $vol"
 
 
-
-        holder.mStandardName.text = stanName
-        holder.mLastPrice.text = lastPri
-        holder.mPriceChange.text =  priChange
-        holder.mTicker.text = tick
+        holder.mStandardName.text = nameTickFormatted
+        holder.mExchangeName.text = excFormatted
+        holder.mLastPrice.text = lpFormatted
+        holder.mPriceChange.text = priceChangeFormatted
+        holder.mPercentChange.text = percentChangeFormatted
+        holder.mPerformanceID.text = performanceIDFormatted
+        holder.mVolume.text = volFormatted
 
     }
 

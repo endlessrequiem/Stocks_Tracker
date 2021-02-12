@@ -1,7 +1,6 @@
 package austindev.xyz.stockstracker.data
 
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.model.DummyData
 
 /**
  * [Datasource] generates a list of [DummyData]

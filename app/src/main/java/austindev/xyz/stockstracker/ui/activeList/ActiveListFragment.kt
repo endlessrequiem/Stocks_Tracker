@@ -1,4 +1,4 @@
-package austindev.xyz.stockstracker.ui.SecondList
+package austindev.xyz.stockstracker.ui.activeList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,23 +8,23 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.adapter.ItemAdapter
 
-class SecondListFragment : Fragment() {
 
-    private lateinit var secondListViewModel: SecondListViewModel
+class ActiveListFragment : Fragment() {
+
+    private lateinit var activeListViewModel: ActiveListViewModel
+
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        secondListViewModel =
-                ViewModelProvider(this).get(SecondListViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_second, container, false)
+        activeListViewModel =
+                ViewModelProvider(this).get(ActiveListViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_active, container, false)
         val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
 
-        recyclerView.adapter = ItemAdapter(this, secondListViewModel.myDataset)
 
 
         // Use this setting to improve performance if you know that changes
