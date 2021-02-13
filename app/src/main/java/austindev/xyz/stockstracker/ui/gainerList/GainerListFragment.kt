@@ -1,7 +1,6 @@
 package austindev.xyz.stockstracker.ui.gainerList
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +25,7 @@ class GainerListFragment : Fragment() {
     private lateinit var gainerListViewModel: GainerListViewModel
 
     private val myAPIService: RetrofitInterface =
-            RetrofitClient().getGainerClient()!!.create(RetrofitInterface::class.java)
+            RetrofitClient().getClient()!!.create(RetrofitInterface::class.java)
 
 
     private val apiInterface: RetrofitInterface = myAPIService
@@ -39,7 +38,7 @@ class GainerListFragment : Fragment() {
     ): View? {
         gainerListViewModel =
                 ViewModelProvider(this).get(GainerListViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gainer, container, false)
+        val root = inflater.inflate(R.layout.fragment_active, container, false)
         val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
         val loadingProgressBar: ProgressBar = root.findViewById(R.id.progressBar)
         val noConnectionScreen: LinearLayout = root.findViewById(R.id.noConnection)

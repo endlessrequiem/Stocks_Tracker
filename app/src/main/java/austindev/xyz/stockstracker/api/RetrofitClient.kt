@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitClient {
 
     var retrofit: Retrofit? = null
-        fun getGainerClient(): Retrofit? {
+        fun getClient(): Retrofit? {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
                         .baseUrl("https://my-json-server.typicode.com/endlessrequiem/Stocks_Tracker/gainers/")

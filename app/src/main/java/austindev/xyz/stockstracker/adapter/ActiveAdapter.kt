@@ -1,5 +1,6 @@
 package austindev.xyz.stockstracker.adapter
 
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
 import austindev.xyz.stockstracker.data.StocksObject
 import austindev.xyz.stockstracker.ui.activeList.ActiveListFragment
+import java.text.DecimalFormat
 
 class ActiveAdapter (
         private var context: ActiveListFragment,
@@ -48,15 +50,15 @@ class ActiveAdapter (
      */
     override fun onBindViewHolder(holder: ActiveViewHolder, position: Int) {
         val item = gainsList!![position]
-        Log.d("HEY", position.toString())
+        val df = DecimalFormat("###0.00")
 
-        val stanName = item?.standardName.toString()
-        val tick = item?.ticker.toString()
-        val exchangeName = item?.exchange.toString()
-        val lastPri = item?.lastPrice.toString()
-        val priChange = item?.priceChange.toString()
+        val stanName = item?.standardName
+        val tick = item?.ticker
+        val exchangeName = item?.exchange
+        val lastPri = df.format(item?.lastPrice)
+        val priChange = df.format(item?.priceChange)
         val perChange = item?.percentChange.toString()
-        val perID = item?.performanceId.toString()
+        val perID = item?.performanceId
         val vol = item?.volume.toString()
 
         val xcName = context.resources.getString(R.string.exchangeName)
@@ -74,6 +76,19 @@ class ActiveAdapter (
         val performanceIDFormatted = "$performID $perID"
         val volFormatted = "$volString $vol"
 
+        val pcDouble = item?.priceChange
+        if (pcDouble != null && pcDouble < 0) {
+            holder.mPriceChange.setTextColor(Color.RED)
+        } else {
+            holder.mPriceChange.setTextColor(Color.parseColor("#558B2F"))
+
+        }
+        val percentDouble = item?.percentChange
+        if (percentDouble != null && percentDouble < 0) {
+            holder.mPercentChange.setTextColor(Color.RED)
+        } else {
+            holder.mPercentChange.setTextColor(Color.parseColor("#558B2F"))
+        }
 
         holder.mStandardName.text = nameTickFormatted
         holder.mExchangeName.text = excFormatted

@@ -26,7 +26,7 @@ class ActiveListFragment : Fragment() {
     private lateinit var activeListViewModel: ActiveListViewModel
 
     private val myAPIService: RetrofitInterface =
-            RetrofitClient().getGainerClient()!!.create(RetrofitInterface::class.java)
+            RetrofitClient().getClient()!!.create(RetrofitInterface::class.java)
 
     private val apiInterface: RetrofitInterface = myAPIService
 

@@ -1,7 +1,6 @@
 package austindev.xyz.stockstracker.ui.loserList
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +24,7 @@ class LoserListFragment : Fragment() {
     private lateinit var loserListViewModel: LoserListViewModel
 
     private val myAPIService: RetrofitInterface =
-            RetrofitClient().getGainerClient()!!.create(RetrofitInterface::class.java)
+            RetrofitClient().getClient()!!.create(RetrofitInterface::class.java)
 
 
     private val apiInterface: RetrofitInterface = myAPIService
