@@ -16,4 +16,12 @@
 
     <string name="load_failed">Something went wrong.</string>
     <string name="noInternet">No Internet Connection</string>
+
+    <string name="graphicAccessibilityMessage">Percentage Graphic</string>
+
+    <string name="sampleTicker">AMC</string>
+    <string name="sampleLastPrice">$37.08</string>
+    <string name="samplePriceChange">($10.04)</string>
+    <string name="samplePercentageChange">37.1302%</string>
+    <string name="sampleStanNameAndExchange">AMC Entertainment Holdings Inc Class A (XYNS)</string>
 </resources>
