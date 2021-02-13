@@ -15,25 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
-            android:paddingBottom="8dp"
-            android:text="Teradata Corp Ordinary Shares (exchange: XNYZ)"
-            android:textAppearance="?attr/textAppearanceHeadline6" />
-
-        <TextView
-            android:id="@+id/exchangeName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:text="Ticker: TDC"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-        <TextView
-            android:id="@+id/lastPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:text="Last Price: 37.08"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            android:text="AMC"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="36sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,12 +25,22 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/lastPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="$37.08"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textStyle="normal" />
+
+            <TextView
                 android:id="@+id/percentChange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
-                android:text="Percent Change: 37.1302%"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:text="(37.1302%)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/percentGraphic"
@@ -67,8 +61,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
-                android:text="Price Change: 10.04 (Percent Change: 37.1302%)"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:text="+10.04"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/priceGraphic"
@@ -77,26 +72,19 @@
                 android:layout_weight="0"
                 android:background="#00FFFFFF"
                 android:contentDescription="TODO"
-                app:srcCompat="@mipmap/ic_gain_foreground" />
+                app:srcCompat="@mipmap/ic_loss_foreground" />
         </LinearLayout>
 
 
         <TextView
-            android:id="@+id/performanceID"
-            android:layout_width="wrap_content"
+            android:id="@+id/exchangeName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
-            android:text="Ticker: TDC, PerformanceID: 0P00009QEM"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-        <TextView
-            android:id="@+id/volume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingBottom="8dp"
-            android:text="Volume: 1.6723314E7"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            android:text="AMC Entertainment Holdings Inc Class A (XYNS)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#707070"
+            android:textStyle="italic" />
 
     </LinearLayout>
 

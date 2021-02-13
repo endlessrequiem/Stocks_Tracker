@@ -28,8 +28,6 @@ class ActiveAdapter (
         val mLastPrice: TextView = view.findViewById(R.id.lastPrice)
         val mPriceChange: TextView = view.findViewById(R.id.priceChange)
         val mExchangeName: TextView = view.findViewById(R.id.exchangeName)
-        val mPerformanceID: TextView = view.findViewById(R.id.performanceID)
-        val mVolume: TextView = view.findViewById(R.id.volume)
         val mPercentChange: TextView = view.findViewById(R.id.percentChange)
         val mPercentGraphic: ImageView = view.findViewById(R.id.percentGraphic)
         val mPriceGraphic: ImageView = view.findViewById(R.id.priceGraphic)
@@ -65,19 +63,11 @@ class ActiveAdapter (
         val vol = item?.volume.toString()
 
         val xcName = context.resources.getString(R.string.exchangeName)
-        val lp = context.resources.getString(R.string.lastPrice)
-        val priCh = context.resources.getString(R.string.priceChange)
-        val perCh = context.resources.getString(R.string.percentChange)
-        val performID = context.resources.getString(R.string.performanceID)
-        val volString = context.resources.getString(R.string.volume)
 
-        val nameTickFormatted = "$stanName ($tick)"
-        val excFormatted = "$xcName $exchangeName"
-        val lpFormatted = "$lp $$lastPri"
-        val priceChangeFormatted = "$priCh $$priChange"
-        val percentChangeFormatted = "$perCh $perChange%"
-        val performanceIDFormatted = "$performID $perID"
-        val volFormatted = "$volString $vol"
+        val exchangeStanName = "$stanName ($exchangeName)"
+        val priceChangeFormatted = "$$priChange"
+        val percentChangeFormatted = "$perChange%"
+
 
         val pcDouble = item?.priceChange
         if (pcDouble != null && pcDouble < 0) {
@@ -98,13 +88,12 @@ class ActiveAdapter (
             holder.mPercentGraphic.setImageResource(R.mipmap.ic_gain_foreground)
         }
 
-        holder.mStandardName.text = nameTickFormatted
-        holder.mExchangeName.text = excFormatted
-        holder.mLastPrice.text = lpFormatted
+
+        holder.mStandardName.text = tick
+        holder.mExchangeName.text = exchangeStanName
+        holder.mLastPrice.text = lastPri
         holder.mPriceChange.text = priceChangeFormatted
         holder.mPercentChange.text = percentChangeFormatted
-        holder.mPerformanceID.text = performanceIDFormatted
-        holder.mVolume.text = volFormatted
 
     }
 
