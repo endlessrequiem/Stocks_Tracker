@@ -24,10 +24,10 @@ class LoserAdapter (
         // Complex data items may need more than one view per item, and
         // you provide access to all the views for a data item in a view holder.
         class LoserViewHolder(view: View): RecyclerView.ViewHolder(view) {
-            val mStandardName: TextView = view.findViewById(R.id.standardName)
+            val mStandardName: TextView = view.findViewById(R.id.tickerName)
             val mLastPrice: TextView = view.findViewById(R.id.lastPrice)
             val mPriceChange: TextView = view.findViewById(R.id.priceChange)
-            val mExchangeName: TextView = view.findViewById(R.id.exchangeName)
+            val mExchangeName: TextView = view.findViewById(R.id.standardNameAndExchange)
             val mPercentChange: TextView = view.findViewById(R.id.percentChange)
             val mPercentGraphic: ImageView = view.findViewById(R.id.percentGraphic)
             val mPriceGraphic: ImageView = view.findViewById(R.id.priceGraphic)
@@ -65,7 +65,8 @@ class LoserAdapter (
             val xcName = context.resources.getString(R.string.exchangeName)
 
             val exchangeStanName = "$stanName ($exchangeName)"
-            val priceChangeFormatted = "$$priChange"
+            val lastPriFormatted = "$$lastPri"
+            val priceChangeFormatted = " ($$priChange)"
             val percentChangeFormatted = "$perChange%"
 
 
@@ -90,10 +91,10 @@ class LoserAdapter (
 
 
             holder.mStandardName.text = tick
-            holder.mExchangeName.text = exchangeStanName
-            holder.mLastPrice.text = lastPri
-            holder.mPriceChange.text = priceChangeFormatted
+            holder.mLastPrice.text = lastPriFormatted
             holder.mPercentChange.text = percentChangeFormatted
+            holder.mPriceChange.text = priceChangeFormatted
+            holder.mExchangeName.text = exchangeStanName
 
         }
 

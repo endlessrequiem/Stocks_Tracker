@@ -3,21 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/cardGray">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/standardName"
+            android:id="@+id/tickerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
+            android:fontFamily="@font/open_sans"
             android:text="AMC"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:textSize="36sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,22 +31,23 @@
                 android:id="@+id/lastPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="8dp"
                 android:text="$37.08"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/percentChange"
+                android:id="@+id/priceChange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="8dp"
-                android:text="(37.1302%)"
+                android:text="($10.04)"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/percentGraphic"
+                android:id="@+id/priceGraphic"
                 android:layout_width="21dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
@@ -57,16 +61,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/priceChange"
+                android:id="@+id/percentChange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="8dp"
-                android:text="+10.04"
+                android:text="37.1302%"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/priceGraphic"
+                android:id="@+id/percentGraphic"
                 android:layout_width="21dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
@@ -77,13 +81,13 @@
 
 
         <TextView
-            android:id="@+id/exchangeName"
+            android:id="@+id/standardNameAndExchange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
             android:text="AMC Entertainment Holdings Inc Class A (XYNS)"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#707070"
+            android:textColor="@android:color/darker_gray"
+            android:paddingBottom="2dp"
             android:textStyle="italic" />
 
     </LinearLayout>
