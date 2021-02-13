@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_gainer"
-        android:icon="@android:drawable/ic_menu_upload"
+        android:icon="@mipmap/ic_stocks_gain_foreground"
         android:title="@string/title_gainer" />
 
     <item
         android:id="@+id/navigation_actives"
-        android:icon="@android:drawable/stat_notify_sync_noanim"
+        android:icon="@mipmap/ic_stocks_active_foreground"
         android:title="@string/title_active" />
 
     <item
         android:id="@+id/navigation_losers"
-        android:icon="@android:drawable/stat_sys_download"
+        android:icon="@mipmap/ic_stocks_loss_foreground"
         android:title="@string/title_loser" />
 
 </menu>

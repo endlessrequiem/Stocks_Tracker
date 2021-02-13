@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
@@ -30,6 +31,8 @@ class GainerAdapter(
         val mPerformanceID: TextView = view.findViewById(R.id.performanceID)
         val mVolume: TextView = view.findViewById(R.id.volume)
         val mPercentChange: TextView = view.findViewById(R.id.percentChange)
+        val mPercentGraphic: ImageView = view.findViewById(R.id.percentGraphic)
+        val mPriceGraphic: ImageView = view.findViewById(R.id.priceGraphic)
 
 
     }
@@ -79,15 +82,20 @@ class GainerAdapter(
         val pcDouble = item?.priceChange
         if (pcDouble != null && pcDouble < 0) {
             holder.mPriceChange.setTextColor(Color.RED)
+            holder.mPriceGraphic.setImageResource(R.mipmap.ic_loss_foreground)
         } else {
             holder.mPriceChange.setTextColor(Color.parseColor("#558B2F"))
+            holder.mPriceGraphic.setImageResource(R.mipmap.ic_gain_foreground)
 
         }
         val percentDouble = item?.percentChange
         if (percentDouble != null && percentDouble < 0) {
             holder.mPercentChange.setTextColor(Color.RED)
+            holder.mPercentGraphic.setImageResource(R.mipmap.ic_loss_foreground)
+
         } else {
             holder.mPercentChange.setTextColor(Color.parseColor("#558B2F"))
+            holder.mPercentGraphic.setImageResource(R.mipmap.ic_gain_foreground)
         }
 
 
