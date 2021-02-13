@@ -1,18 +1,35 @@
 package austindev.xyz.stockstracker.ui.loserList
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.adapter.ItemAdapter
+import austindev.xyz.stockstracker.adapter.LoserAdapter
+import austindev.xyz.stockstracker.api.RetrofitClient
+import austindev.xyz.stockstracker.api.RetrofitInterface
+import austindev.xyz.stockstracker.data.StocksObject
+import com.google.android.material.snackbar.Snackbar
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoserListFragment : Fragment() {
 
     private lateinit var loserListViewModel: LoserListViewModel
+
+    private val myAPIService: RetrofitInterface =
+            RetrofitClient().getGainerClient()!!.create(RetrofitInterface::class.java)
+
+
+    private val apiInterface: RetrofitInterface = myAPIService
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,13 +40,27 @@ class LoserListFragment : Fragment() {
                 ViewModelProvider(this).get(LoserListViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_losers, container, false)
         val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
+        val loadingProgressBar: ProgressBar = root.findViewById(R.id.progressBar)
+        val noConnectionScreen: LinearLayout = root.findViewById(R.id.noConnection)
 
-        recyclerView.adapter = ItemAdapter(this, loserListViewModel.myDataset)
 
+        apiInterface.getLosers()!!.enqueue(object : Callback<List<StocksObject?>?> {
 
-        // Use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        recyclerView.setHasFixedSize(true)
+            override fun onResponse(call: Call<List<StocksObject?>?>, response: Response<List<StocksObject?>?>) {
+                val myDataset = response.body()!!.toList()
+                recyclerView.adapter = LoserAdapter(this@LoserListFragment, myDataset)
+                loadingProgressBar.visibility = View.INVISIBLE
+
+            }
+
+            override fun onFailure(call: Call<List<StocksObject?>?>, t: Throwable) {
+                loadingProgressBar.visibility = View.INVISIBLE
+                noConnectionScreen.visibility = View.VISIBLE
+                Snackbar.make(loadingProgressBar, getString(R.string.load_failed), Snackbar.LENGTH_LONG).show()
+                t.printStackTrace()
+            }
+
+        })
 
 
         return root

@@ -8,19 +8,19 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
 import austindev.xyz.stockstracker.data.StocksObject
-import austindev.xyz.stockstracker.ui.gainerList.GainerListFragment
+import austindev.xyz.stockstracker.ui.activeList.ActiveListFragment
 
-class GainerAdapter(
-        private var context: GainerListFragment,
+class ActiveAdapter (
+        private var context: ActiveListFragment,
         private var gainsList: List<StocksObject?>?
 
 
-): RecyclerView.Adapter<GainerAdapter.LoserViewHolder>() {
+): RecyclerView.Adapter<ActiveAdapter.ActiveViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder.
-    class LoserViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class ActiveViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val mStandardName: TextView = view.findViewById(R.id.standardName)
         val mLastPrice: TextView = view.findViewById(R.id.lastPrice)
         val mPriceChange: TextView = view.findViewById(R.id.priceChange)
@@ -35,18 +35,18 @@ class GainerAdapter(
     /**
      * Create new views (invoked by the layout manager)
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoserViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActiveViewHolder {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item, parent, false)
+                .inflate(R.layout.list_item, parent, false)
 
-        return LoserViewHolder(adapterLayout).listen()
+        return ActiveViewHolder(adapterLayout).listen()
     }
 
     /**
      * Replace the contents of a view (invoked by the layout manager)
      */
-    override fun onBindViewHolder(holder: LoserViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ActiveViewHolder, position: Int) {
         val item = gainsList!![position]
         Log.d("HEY", position.toString())
 
@@ -100,4 +100,3 @@ class GainerAdapter(
     }
 
 }
-

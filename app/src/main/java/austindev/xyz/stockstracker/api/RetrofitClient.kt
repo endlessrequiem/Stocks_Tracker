@@ -1,4 +1,4 @@
-package austindev.xyz.stockstracker.data
+package austindev.xyz.stockstracker.api
 
 import android.util.Log
 import retrofit2.Retrofit
@@ -6,19 +6,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitClient {
 
-    val BASE_URL =
-                "https://my-json-server.typicode.com/endlessrequiem/Stocks_Tracker/gainers/"
-        var retrofit: Retrofit? = null
-        fun getClient(): Retrofit? {
+    var retrofit: Retrofit? = null
+        fun getGainerClient(): Retrofit? {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl("https://my-json-server.typicode.com/endlessrequiem/Stocks_Tracker/gainers/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
             }
-            Log.d("Client", "CLIENT LOADED")
+            Log.d("Client", "GAINER CLIENT LOADED")
 
             return retrofit
         }
-
 }
