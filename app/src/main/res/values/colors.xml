@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gainGreen">#558B2F</color>
     <color name="cardGray">#272727</color>
+    <color name="primary">#555555</color>
 </resources>
