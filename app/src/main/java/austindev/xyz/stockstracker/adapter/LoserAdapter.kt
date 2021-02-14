@@ -59,14 +59,11 @@ class LoserAdapter (
             val lastPri = df.format(item?.lastPrice)
             val priChange = df.format(item?.priceChange)
             val perChange = item?.percentChange.toString()
-            val perID = item?.performanceId
-            val vol = item?.volume.toString()
 
-            val xcName = context.resources.getString(R.string.exchangeName)
 
             val exchangeStanName = "$stanName ($exchangeName)"
             val lastPriFormatted = "$$lastPri"
-            val priceChangeFormatted = " ($$priChange)"
+            var priceChangeFormatted = " ($+$priChange)"
             val percentChangeFormatted = "$perChange%"
 
 
@@ -74,6 +71,7 @@ class LoserAdapter (
             if (pcDouble != null && pcDouble < 0) {
                 holder.mPriceChange.setTextColor(Color.RED)
                 holder.mPriceGraphic.setImageResource(R.mipmap.ic_loss_foreground)
+                priceChangeFormatted = " ($$priChange)"
             } else {
                 holder.mPriceChange.setTextColor(Color.parseColor("#558B2F"))
                 holder.mPriceGraphic.setImageResource(R.mipmap.ic_gain_foreground)
