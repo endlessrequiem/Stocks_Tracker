@@ -56,7 +56,6 @@ class LoserListFragment : Fragment() {
                 loadingProgressBar.visibility = View.INVISIBLE
                 noConnectionScreen.visibility = View.VISIBLE
                 Snackbar.make(loadingProgressBar, getString(R.string.load_failed), Snackbar.LENGTH_LONG).show()
-                t.printStackTrace()
             }
 
         })

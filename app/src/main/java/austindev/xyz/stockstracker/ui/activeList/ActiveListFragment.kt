@@ -1,5 +1,6 @@
 package austindev.xyz.stockstracker.ui.activeList
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -58,7 +59,6 @@ class ActiveListFragment : Fragment() {
                 loadingProgressBar.visibility = View.INVISIBLE
                 noConnectionScreen.visibility = View.VISIBLE
                 Snackbar.make(loadingProgressBar, getString(R.string.load_failed), Snackbar.LENGTH_SHORT).show()
-                t.printStackTrace()
             }
 
 

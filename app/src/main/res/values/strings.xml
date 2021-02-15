@@ -14,7 +14,7 @@
     <string name="performanceID">Performance ID: </string>
     <string name="volume">Volume: </string>
 
-    <string name="load_failed">Something went wrong.</string>
+    <string name="load_failed">Load Failed.</string>
     <string name="noInternet">No Internet Connection</string>
 
     <string name="graphicAccessibilityMessage">Percentage Graphic</string>
