@@ -19,6 +19,6 @@
     </style>
 
     <style name="TextViewStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:fontFamily">@font/prompt</item>
     </style>
 </resources>

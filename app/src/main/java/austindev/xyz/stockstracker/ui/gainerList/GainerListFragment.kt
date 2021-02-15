@@ -38,7 +38,8 @@ class GainerListFragment : Fragment() {
     ): View? {
         gainerListViewModel =
                 ViewModelProvider(this).get(GainerListViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_active, container, false)
+        val root = inflater.inflate(R.layout.fragment_gainer, container, false)
+
         val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
         val loadingProgressBar: ProgressBar = root.findViewById(R.id.progressBar)
         val noConnectionScreen: LinearLayout = root.findViewById(R.id.noConnection)

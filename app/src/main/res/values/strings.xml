@@ -6,6 +6,7 @@
     <string name="title_gainer">Gainers</string>
     <string name="title_loser">Losers</string>
     <string name="title_active">Actives</string>
+    <string name="title_stock_info">Stock Info</string>
 
     <string name="exchangeName">Exchange: </string>
     <string name="lastPrice">Last Price: </string>

@@ -13,18 +13,25 @@
         <action
             android:id="@+id/action_navigation_gainer_to_navigation_actives"
             app:destination="@id/navigation_actives" />
+        <action
+            android:id="@+id/action_navigation_gainer_to_navigation_stock_info"
+            app:destination="@id/navigation_stock_info" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_actives"
         android:name="austindev.xyz.stockstracker.ui.activeList.ActiveListFragment"
-        android:label="@string/title_active">
+        android:label="@string/title_active"
+        tools:layout="@layout/fragment_active">
         <action
             android:id="@+id/action_navigation_actives_to_navigation_losers"
             app:destination="@id/navigation_losers" />
         <action
             android:id="@+id/action_navigation_actives_to_navigation_gainer"
             app:destination="@id/navigation_gainer" />
+        <action
+            android:id="@+id/action_navigation_actives_to_navigation_stock_info"
+            app:destination="@id/navigation_stock_info" />
     </fragment>
 
     <fragment
@@ -35,6 +42,16 @@
         <action
             android:id="@+id/action_navigation_losers_to_navigation_actives"
             app:destination="@id/navigation_actives" />
+        <action
+            android:id="@+id/action_navigation_losers_to_navigation_stock_info"
+            app:destination="@id/navigation_stock_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_stock_info"
+        android:name="austindev.xyz.stockstracker.ui.stockInfo.StockInfoFragment"
+        android:label="@string/title_stock_info"
+        tools:layout="@layout/fragment_stock_info" >
     </fragment>
 
 
