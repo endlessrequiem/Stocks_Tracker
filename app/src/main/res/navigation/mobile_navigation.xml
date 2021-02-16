@@ -9,7 +9,7 @@
         android:id="@+id/navigation_gainer"
         android:name="austindev.xyz.stockstracker.ui.gainerList.GainerListFragment"
         android:label="@string/title_gainer"
-        tools:layout="@layout/fragment_gainer" >
+        tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_navigation_gainer_to_navigation_actives"
             app:destination="@id/navigation_actives" />
@@ -22,7 +22,7 @@
         android:id="@+id/navigation_actives"
         android:name="austindev.xyz.stockstracker.ui.activeList.ActiveListFragment"
         android:label="@string/title_active"
-        tools:layout="@layout/fragment_active">
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_navigation_actives_to_navigation_losers"
             app:destination="@id/navigation_losers" />
@@ -38,7 +38,7 @@
         android:id="@+id/navigation_losers"
         android:name="austindev.xyz.stockstracker.ui.loserList.LoserListFragment"
         android:label="@string/title_loser"
-        tools:layout="@layout/fragment_losers" >
+        tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_navigation_losers_to_navigation_actives"
             app:destination="@id/navigation_actives" />
@@ -49,9 +49,18 @@
 
     <fragment
         android:id="@+id/navigation_stock_info"
-        android:name="austindev.xyz.stockstracker.ui.stockInfo.StockInfoFragment"
+        android:name="austindev.xyz.stockstracker.ui.stockInfo.StockInfoActivity"
         android:label="@string/title_stock_info"
-        tools:layout="@layout/fragment_stock_info" >
+        tools:layout="@layout/stock_info_activity" >
+        <action
+            android:id="@+id/action_navigation_stock_info_to_navigation_losers"
+            app:destination="@id/navigation_losers" />
+        <action
+            android:id="@+id/action_navigation_stock_info_to_navigation_actives"
+            app:destination="@id/navigation_actives" />
+        <action
+            android:id="@+id/action_navigation_stock_info_to_navigation_gainer"
+            app:destination="@id/navigation_gainer" />
     </fragment>
 
 

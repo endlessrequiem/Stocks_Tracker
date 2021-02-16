@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.adapter.LoserAdapter
+import austindev.xyz.stockstracker.adapter.StockItemAdapter
 import austindev.xyz.stockstracker.api.RetrofitClient
 import austindev.xyz.stockstracker.api.RetrofitInterface
 import austindev.xyz.stockstracker.data.StocksObject
@@ -37,7 +37,7 @@ class LoserListFragment : Fragment() {
     ): View? {
         loserListViewModel =
                 ViewModelProvider(this).get(LoserListViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_losers, container, false)
+        val root = inflater.inflate(R.layout.fragment_list, container, false)
         val recyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
         val loadingProgressBar: ProgressBar = root.findViewById(R.id.progressBar)
         val noConnectionScreen: LinearLayout = root.findViewById(R.id.noConnection)
@@ -47,7 +47,7 @@ class LoserListFragment : Fragment() {
 
             override fun onResponse(call: Call<List<StocksObject?>?>, response: Response<List<StocksObject?>?>) {
                 val myDataset = response.body()!!.toList()
-                recyclerView.adapter = LoserAdapter(this@LoserListFragment, myDataset)
+                recyclerView.adapter = StockItemAdapter(myDataset)
                 loadingProgressBar.visibility = View.INVISIBLE
 
             }

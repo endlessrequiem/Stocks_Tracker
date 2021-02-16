@@ -1,5 +1,6 @@
 package austindev.xyz.stockstracker.adapter
 
+import android.content.Intent
 import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,20 +11,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
 import austindev.xyz.stockstracker.data.StocksObject
-import austindev.xyz.stockstracker.ui.gainerList.GainerListFragment
+import austindev.xyz.stockstracker.ui.stockInfo.StockInfoActivity
 import java.text.DecimalFormat
 
-class GainerAdapter(
-        private var context: GainerListFragment,
-        private var gainsList: List<StocksObject?>?
+class StockItemAdapter(
+    //private var context: GainerListFragment,
+    private var gainsList: List<StocksObject?>?
 
 
-): RecyclerView.Adapter<GainerAdapter.LoserViewHolder>() {
+): RecyclerView.Adapter<StockItemAdapter.GainerViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder.
-    class LoserViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class GainerViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val mStandardName: TextView = view.findViewById(R.id.tickerName)
         val mLastPrice: TextView = view.findViewById(R.id.lastPrice)
         val mPriceChange: TextView = view.findViewById(R.id.priceChange)
@@ -38,18 +39,18 @@ class GainerAdapter(
     /**
      * Create new views (invoked by the layout manager)
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoserViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GainerViewHolder {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
 
-        return LoserViewHolder(adapterLayout).listen()
+        return GainerViewHolder(adapterLayout).listen()
     }
 
     /**
      * Replace the contents of a view (invoked by the layout manager)
      */
-    override fun onBindViewHolder(holder: LoserViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: GainerViewHolder, position: Int) {
         val item = gainsList!![position]
         val df = DecimalFormat("###0.00")
 
@@ -94,6 +95,14 @@ class GainerAdapter(
         holder.mPriceChange.text = priceChangeFormatted
         holder.mExchangeName.text = exchangeStanName
 
+        holder.itemView.setOnClickListener { v ->
+            Log.d("Item No:", position.toString())
+
+            val intent = Intent(v.context, StockInfoActivity::class.java)
+            v.context.startActivity(intent)
+
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -104,7 +113,8 @@ class GainerAdapter(
     //AdapterPosition is the position of the item clicked
     private fun <T : RecyclerView.ViewHolder> T.listen(): T {
         itemView.setOnClickListener {
-            Log.d("Item No:", adapterPosition.toString())
+            //Log.d("Item No:", adapterPosition.toString())
+
 
         }
         return this

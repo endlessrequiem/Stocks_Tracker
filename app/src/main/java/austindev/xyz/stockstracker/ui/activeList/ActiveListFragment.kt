@@ -1,8 +1,6 @@
 package austindev.xyz.stockstracker.ui.activeList
 
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.adapter.ActiveAdapter
+import austindev.xyz.stockstracker.adapter.StockItemAdapter
 import austindev.xyz.stockstracker.api.RetrofitClient
 import austindev.xyz.stockstracker.api.RetrofitInterface
 import austindev.xyz.stockstracker.data.StocksObject
@@ -39,7 +37,7 @@ class ActiveListFragment : Fragment() {
     ): View? {
         activeListViewModel =
                 ViewModelProvider(this).get(ActiveListViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_active, container, false)
+        val root = inflater.inflate(R.layout.fragment_list, container, false)
         val loadingProgressBar: ProgressBar = root.findViewById(R.id.progressBar)
         val noConnectionScreen: LinearLayout = root.findViewById(R.id.noConnection)
 
@@ -49,7 +47,7 @@ class ActiveListFragment : Fragment() {
 
             override fun onResponse(call: Call<List<StocksObject?>?>, response: Response<List<StocksObject?>?>) {
                 val myDataset = response.body()!!.toList()
-                recyclerView.adapter = ActiveAdapter(this@ActiveListFragment, myDataset)
+                recyclerView.adapter = StockItemAdapter(myDataset)
                 loadingProgressBar.visibility = View.INVISIBLE
 
             }
