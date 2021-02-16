@@ -20,6 +20,8 @@ class StockInfoActivity : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
