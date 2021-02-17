@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import austindev.xyz.stockstracker.R
-import austindev.xyz.stockstracker.adapter.StockItemAdapter
+import austindev.xyz.stockstracker.adapter.GainerAdapter
 import austindev.xyz.stockstracker.api.RetrofitClient
 import austindev.xyz.stockstracker.api.RetrofitInterface
 import austindev.xyz.stockstracker.data.*
@@ -50,7 +50,7 @@ class GainerListFragment : Fragment() {
 
             override fun onResponse(call: Call<List<StocksObject?>?>, response: Response<List<StocksObject?>?>) {
                 val myDataset = response.body()!!.toList()
-                recyclerView.adapter = StockItemAdapter(myDataset)
+                recyclerView.adapter = GainerAdapter(this@GainerListFragment, myDataset)
                 loadingProgressBar.visibility = View.INVISIBLE
 
             }
@@ -64,8 +64,6 @@ class GainerListFragment : Fragment() {
 
 
         })
-
-        recyclerView
 
 
         return root
